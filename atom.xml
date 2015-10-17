@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Codeing]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-10-17T12:50:35.533Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[George]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[加油！]]></title>
+    <link href="http://yoursite.com/2015/10/17/%E5%8A%A0%E6%B2%B9%EF%BC%81/"/>
+    <id>http://yoursite.com/2015/10/17/加油！/</id>
+    <published>2015-10-17T12:47:55.000Z</published>
+    <updated>2015-10-17T12:50:35.533Z</updated>
+    <content type="html"><![CDATA[<p>  认真的对待生活，不要抱怨有人，物竞天择，适者生存。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>  认真的对待生活，不要抱怨有人，物竞天择，适者生存。</p>
+]]>
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="随想" scheme="http://yoursite.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+</feed>

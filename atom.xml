@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-17T12:50:35.533Z</updated>
+  <updated>2015-10-17T17:24:31.121Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Java开发者易犯错误]]></title>
+    <link href="http://yoursite.com/2015/10/18/Java%E5%BC%80%E5%8F%91%E8%80%85%E6%98%93%E7%8A%AF%E9%94%99%E8%AF%AF/"/>
+    <id>http://yoursite.com/2015/10/18/Java开发者易犯错误/</id>
+    <published>2015-10-17T16:57:08.000Z</published>
+    <updated>2015-10-17T17:24:31.121Z</updated>
+    <content type="html"><![CDATA[<p>本文总结了Java开发者经常会犯的前十种错误列表。</p>
+<h2 id="Top1-_数组转换为数组列表">Top1. 数组转换为数组列表</h2><p>将数组转换为数组列表，开发者经常会这样做：</p>
+<pre><code><span class="built_in">List</span> <span class="built_in">list</span> = Arrays<span class="built_in">.</span>asList(arr);  
+</code></pre><p>Arrays.asList()将返回一个数组内部是私有静态类的ArrayList，这不是java.util.ArrayList类，java.util.Arrays.ArrayList类有set()、 get()、 contains()方法，但是没有任何加元素的方法，因此它的大小是固定的。你应该这么做来创建一个真正的数组：<br><a id="more"></a></p>
+<pre><code>ArrayList arrayList = new ArrayList<span class="list">(<span class="keyword">Arrays</span>.asList<span class="list">(<span class="keyword">arr</span>)</span>)</span><span class="comment">;  </span>
+</code></pre><p>ArrayList的构造函数能够接受一个集合类型，这也是java.util.Arrays.ArrayList的超级类型。</p>
+<h2 id="Top2-_检查一个数组包含一个值">Top2. 检查一个数组包含一个值</h2><pre><code><span class="number">1.</span> Set <span class="built_in">set</span> = <span class="keyword">new</span> HashSet(Arrays.asList(arr));  
+<span class="number">2.</span> <span class="keyword">return</span> <span class="built_in">set</span>.contains(targetValue);  
+</code></pre><p>代码可以工作，但是没有必要首先转换列表到Set，转换一个列表到一个Set需要额外的时间。因此你可以把它简化为：</p>
+<pre><code>1. <span class="tag">Arrays</span><span class="class">.asList</span>(<span class="tag">arr</span>)<span class="class">.contains</span>(<span class="tag">targetValue</span>);  
+</code></pre><p>或</p>
+<pre><code><span class="number">1.</span> <span class="keyword">for</span>(String s: arr){  
+<span class="number">2.</span> <span class="keyword">if</span>(s.equals(targetValue))  
+<span class="number">3.</span> returntrue;  
+<span class="number">4.</span> }  
+<span class="number">5.</span> returnfalse; 
+</code></pre><p>第一个比第二个更具可读性</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本文总结了Java开发者经常会犯的前十种错误列表。</p>
+<h2 id="Top1-_数组转换为数组列表">Top1. 数组转换为数组列表</h2><p>将数组转换为数组列表，开发者经常会这样做：</p>
+<pre><code><span class="built_in">List</span> <span class="built_in">list</span> = Arrays<span class="built_in">.</span>asList(arr);  
+</code></pre><p>Arrays.asList()将返回一个数组内部是私有静态类的ArrayList，这不是java.util.ArrayList类，java.util.Arrays.ArrayList类有set()、 get()、 contains()方法，但是没有任何加元素的方法，因此它的大小是固定的。你应该这么做来创建一个真正的数组：<br>]]>
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="Technology" scheme="http://yoursite.com/categories/Technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[加油！]]></title>

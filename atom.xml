@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-17T17:24:31.121Z</updated>
+  <updated>2015-10-18T14:36:01.058Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,86 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[map遍历方式]]></title>
+    <link href="http://yoursite.com/2015/10/18/map%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F/"/>
+    <id>http://yoursite.com/2015/10/18/map遍历方式/</id>
+    <published>2015-10-18T14:33:29.000Z</published>
+    <updated>2015-10-18T14:36:01.058Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li>遍历所有的key ,Set keySet() 该方法会将当前Map中所有的key存入一个Set集合后返回,所以遍历集合就相当遍历了所有的key</li>
+<li>遍历每一组键值 Set<k><v> entrySet() 该方法是将key-value封装为一个Entry对象并存入Set集合后返回<a id="more"></a></v></k></li>
+<li>获取所有的value Collection values() 该方法会将所有value存入一个集合后返回</li>
+</ul>
+<p>public class MapDemo03 {</p>
+<pre><code><span class="comment">/**
+ * @param args
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) {
+    Map&lt;<span class="keyword">String</span>, Integer&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>, Integer&gt;();
+
+    <span class="built_in">map</span>.put(<span class="string">"语文"</span>, <span class="number">99</span>);
+    <span class="built_in">map</span>.put(<span class="string">"数学"</span>, <span class="number">98</span>);
+    <span class="built_in">map</span>.put(<span class="string">"英语"</span>, <span class="number">97</span>);
+    <span class="built_in">map</span>.put(<span class="string">"化学"</span>, <span class="number">96</span>);
+    <span class="built_in">map</span>.put(<span class="string">"化学"</span>, <span class="number">94</span>);
+    System.out.<span class="built_in">println</span>(<span class="built_in">map</span>);
+
+    <span class="comment">/*
+     * 遍历所有的key ,Set keySet() 该方法会将当前Map中所有的key存入
+     * 一个Set集合后返回,所以遍历集合就相当遍历了所有的key
+     */</span>
+    Set&lt;<span class="keyword">String</span>&gt; keySet = <span class="built_in">map</span>.keySet();
+    <span class="keyword">for</span> (<span class="keyword">String</span> string : keySet) {
+        System.out.<span class="built_in">println</span>(<span class="string">"key:"</span> + string);
+    }
+
+    <span class="comment">/*
+     * 遍历每一组键值 Set&lt;K&gt;&lt;V&gt; entrySet() 该方法是将key-value封装为一个Entry对象并存入Set集合后返回
+     */</span>
+    Set&lt;Entry&lt;<span class="keyword">String</span>, Integer&gt;&gt; entrySet = <span class="built_in">map</span>.entrySet();
+    <span class="keyword">for</span> (Entry&lt;<span class="keyword">String</span>, Integer&gt; entry : entrySet) {
+        <span class="keyword">String</span> <span class="variable">key</span> = entry.getKey();
+        Integer value = entry.getValue();
+        System.out.<span class="built_in">println</span>(<span class="variable">key</span> + <span class="string">":"</span> + value);
+    }
+
+    <span class="comment">/*
+     * 获取所有的value Collection values() 该方法会将所有value存入一个集合后返回
+     */</span>
+    Collection&lt;Integer&gt; values = <span class="built_in">map</span>.values();
+    <span class="keyword">for</span> (Integer integer : values) {
+        System.out.<span class="built_in">println</span>(<span class="string">"value:"</span> + integer);
+    }
+}
+</code></pre><p>}<br>out:</p>
+<pre><code>{数学=<span class="number">98</span>, 化学=<span class="number">94</span>, 语文=<span class="number">99</span>, 英语=<span class="number">97</span>}
+key:数学
+key:化学
+key:语文
+key:英语
+数学:<span class="number">98</span>
+化学:<span class="number">94</span>
+语文:<span class="number">99</span>
+英语:<span class="number">97</span>
+value:<span class="number">98</span>
+value:<span class="number">94</span>
+value:<span class="number">99</span>
+value:<span class="number">97</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<ul>
+<li>遍历所有的key ,Set keySet() 该方法会将当前Map中所有的key存入一个Set集合后返回,所以遍历集合就相当遍历了所有的key</li>
+<li>遍历每一组键值 Set<K><V> entrySet() 该方法是将key-value封装为一个Entry对象并存入Set集合后返回]]>
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="Technology" scheme="http://yoursite.com/categories/Technology/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Java开发者易犯错误]]></title>
